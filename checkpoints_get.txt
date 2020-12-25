@@ -3,14 +3,47 @@
 #https://github.com/open-mmlab/mmdetection/blob/master/docs/model_zoo.md
 
 #Done
-#Cascade R-CNN
+#Cascade R-CNN (bis 44.7 box AP)
 
 #Offen
-#Faster R-CNN
+
+
+#Faster R-CNN (bis 42.1 box AP)
 #Mask R-CNN
 #Fast R-CNN (with pre-computed proposals)
-#RetinaNet
-#FoveaBox
+
+
+#RetinaNet (bis 41 box AP)
+
+#FoveaBox (bis 42 box AP)
+
+#Weight Standardization (bis 42.7 box AP)
+
+#Grid R-CNN (bis 43 box AP)
+
+#Reppoints ( bis 44.2 box AP)
+
+#InstaBooster (bis 44.7 box AP)
+#Centripedal Net (bis 44.8 box AP)
+
+#HR Net mit HTC (bis 46.4 box AP)
+GCNet (bis 46.4 box AP)
+
+#HTC (bis 47 box AP)
+#Deformable Convolution Networks DCN (bis 47.3 box AP)
+#Res2Net mit HTC (bis 47.5 box AP)
+#ResNeSt "Split-Attention Networks" (bis 47.7 box AP) bei 10.5GB
+
+#Generalized Focal Loss (bis 48.1 box AP)
+
+#DetectoRS mit HTC + ResNet-50) bis 49.1 box AP) bis 13.6GB
+
+
+
+
+#Nicht relevant
+#SSD (bis 29.4 box AP)
+#Group Normalization (bis 42.1 box AP)
 
 mkdir checkpoints
 
@@ -24,3 +57,9 @@ mkdir checkpoints
 #==> Cascade RCNN
 
 wget -c http://download.openmmlab.com/mmdetection/v2.0/cascade_rcnn/cascade_rcnn_r50_caffe_fpn_1x_coco/cascade_rcnn_r50_caffe_fpn_1x_coco_bbox_mAP-0.404_20200504_174853-b857be87.pth -O checkpoints/cascade_rcnn_r50_caffe_fpn_1x_coco_bbox_mAP-0.404_20200504_174853-b857be87.pth
+
+#==> Faster R-CNN
+
+wget -c http://download.openmmlab.com/mmdetection/v2.0/faster_rcnn/faster_rcnn_x101_64x4d_fpn_1x_coco/faster_rcnn_x101_64x4d_fpn_1x_coco_20200204-833ee192.pth -O checkpoints/faster_rcnn_x101_64x4d_fpn_1x_coco_20200204-833ee192.pth
+
+
