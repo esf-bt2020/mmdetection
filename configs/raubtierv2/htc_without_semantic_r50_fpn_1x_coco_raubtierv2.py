@@ -66,7 +66,7 @@ model = dict(
                 conv_out_channels=256,
                 num_classes=3,
                 loss_mask=dict(
-                    type='CrossEntropyLoss', use_mask=True, loss_weight=1.0)),
+                    type='CrossEntropyLoss', use_mask=False, loss_weight=1.0)),
             dict(
                 type='HTCMaskHead',
                 num_convs=4,
@@ -74,7 +74,7 @@ model = dict(
                 conv_out_channels=256,
                 num_classes=3,
                 loss_mask=dict(
-                    type='CrossEntropyLoss', use_mask=True, loss_weight=1.0)),
+                    type='CrossEntropyLoss', use_mask=False, loss_weight=1.0)),
             dict(
                 type='HTCMaskHead',
                 num_convs=4,
@@ -82,7 +82,7 @@ model = dict(
                 conv_out_channels=256,
                 num_classes=3,
                 loss_mask=dict(
-                    type='CrossEntropyLoss', use_mask=True, loss_weight=1.0))
+                    type='CrossEntropyLoss', use_mask=False, loss_weight=1.0))
         ]
     
         	)
