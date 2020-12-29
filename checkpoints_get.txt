@@ -19,6 +19,7 @@
 #Res2Net mit HTC (bis 47.5 box AP)
 
 
+#=====================
 #Deformable Convolution Networks DCN (bis 47.3 box AP mit Cascade Mask)
 	R-101-FPN Cascade (bis 45 box AP) @ 6.4 GB
 
@@ -32,6 +33,7 @@ wget -c http://download.openmmlab.com/mmdetection/v2.0/dcn/cascade_rcnn_r101_fpn
 	
 
 #HTC (bis 47 box AP)
+	without semantic r50_fpn_1x_coco
 
 GCNet (bis 46.4 box AP)
 
