@@ -3,7 +3,7 @@ _base_ = '../reppoints/reppoints_moment_x101_fpn_dconv_c3-c5_gn-neck+head_2x_coc
 
 model = dict(
     		bbox_head=dict(
-        	num_classes=80)
+        	num_classes=3)
        )
 
 
