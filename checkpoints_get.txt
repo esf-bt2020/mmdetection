@@ -57,16 +57,21 @@ GCNet (bis 46.4 box AP)
 
 wget -c http://download.openmmlab.com/mmdetection/v2.0/hrnet/cascade_rcnn_hrnetv2p_w40_20e_coco/cascade_rcnn_hrnetv2p_w40_20e_coco_20200512_161112-75e47b04.pth \
       -O checkpoints/cascade_rcnn_hrnetv2p_w40_20e_coco_20200512_161112-75e47b04.pth
-      
------
+            	
+#===============
+
+#InstaBooster (bis 44.7 box AP mit Mask R-CNN) Image Augmentation
+	bis 43.7 box AP mit Cascade R-CNN (R-101-FPN Backbone),  @6GB
+
+------
+
+#Centripedal Net (bis 44.8 box AP)
+	HourglassNet-104 als Backbone, 16.7GB
+
+#wget -c http://download.openmmlab.com/mmdetection/v2.0/centripetalnet/centripetalnet_hourglass104_mstest_16x6_210e_coco/centripetalnet_hourglass104_mstest_16x6_210e_coco_20200915_204804-3ccc61e5.pth \
+      -O checkpoints/centripetalnet_hourglass104_mstest_16x6_210e_coco_20200915_204804-3ccc61e5.pth
       	
 
-
-
-
-
-#InstaBooster (bis 44.7 box AP)
-#Centripedal Net (bis 44.8 box AP)
 
 
 
