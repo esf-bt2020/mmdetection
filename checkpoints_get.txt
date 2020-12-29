@@ -79,10 +79,16 @@ wget -c http://download.openmmlab.com/mmdetection/v2.0/hrnet/cascade_rcnn_hrnetv
 #wget -c http://download.openmmlab.com/mmdetection/v2.0/reppoints/reppoints_moment_x101_fpn_dconv_c3-c5_gn-neck%2Bhead_2x_coco/reppoints_moment_x101_fpn_dconv_c3-c5_gn-neck%2Bhead_2x_coco_20200329-f87da1ea.pth \
       -O checkpoints/reppoints_moment_x101_fpn_dconv_c3-c5_gn-neck%2Bhead_2x_coco_20200329-f87da1ea.pth
 
---------------
+#==============================
 
 
 #Grid R-CNN (bis 43 box AP)
+	X-101-64x4d Backbone (11.3 GB)
+
+#wget -c http://download.openmmlab.com/mmdetection/v2.0/grid_rcnn/grid_rcnn_x101_64x4d_fpn_gn-head_2x_coco/grid_rcnn_x101_64x4d_fpn_gn-head_2x_coco_20200204-ec76a754.pth \
+      -O checkpoints/grid_rcnn_x101_64x4d_fpn_gn-head_2x_coco_20200204-ec76a754.pth
+
+--------------
 
 #Weight Standardization (bis 42.7 box AP)
 
