@@ -48,8 +48,19 @@ wget -c http://download.openmmlab.com/mmdetection/v2.0/gfl/gfl_x101_32x4d_fpn_dc
 #==============================
 
 GCNet (bis 46.4 box AP)
+	=> mask basiert
+	
+---
 
-#HR Net mit HTC (bis 46.4 box AP)
+#HR Net mit HTC (bis 46.4 box AP mit mask)
+	HRNetV2p-W40 mit Cascade R-CNN box AP = 43.8
+
+wget -c http://download.openmmlab.com/mmdetection/v2.0/hrnet/cascade_rcnn_hrnetv2p_w40_20e_coco/cascade_rcnn_hrnetv2p_w40_20e_coco_20200512_161112-75e47b04.pth \
+      -O checkpoints/cascade_rcnn_hrnetv2p_w40_20e_coco_20200512_161112-75e47b04.pth
+      
+-----
+      	
+
 
 
 
