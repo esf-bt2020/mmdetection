@@ -1,7 +1,10 @@
 # Basiskonfigurationsfile
 _base_ = '../grid_rcnn/grid_rcnn_x101_64x4d_fpn_gn-head_2x_coco.py'
 
-
+model = dict(
+    		roi_head=dict(
+        	num_classes=3)
+       )
 
 # Modify dataset related settings
 dataset_type = 'COCODataset'
