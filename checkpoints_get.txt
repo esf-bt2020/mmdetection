@@ -31,42 +31,28 @@ wget -c http://download.openmmlab.com/mmdetection/v2.0/gfl/gfl_x101_32x4d_fpn_dc
 #wget -c http://download.openmmlab.com/mmdetection/v2.0/dcn/cascade_rcnn_r101_fpn_dconv_c3-c5_1x_coco/cascade_rcnn_r101_fpn_dconv_c3-c5_1x_coco_20200203-3b2f0594.pth \
       -O checkpoints/cascade_rcnn_r101_fpn_dconv_c3-c5_1x_coco_20200203-3b2f0594.pth	
 	
------	
+=================
 
 #ResNeSt "Split-Attention Networks" (bis 47.7 box AP) bei 10.5GB (Cascade Mask R-CNN und S-101-FPN)
 	Cascade R-CNN (S-101-FPN) (bis 46.8 box ap) @ 8.4GB 
 
-#Res2Net mit HTC (bis 47.5 box AP)	
-	
-		
-	
-#============== HTC ===============	
+#wget -c http://download.openmmlab.com/mmdetection/v2.0/resnest/cascade_rcnn_s101_fpn_syncbn-backbone%2Bhead_mstrain-range_1x_coco/cascade_rcnn_s101_fpn_syncbn-backbone%2Bhead_mstrain-range_1x_coco_20201005_113242-b9459f8f.pth \
+      -O checkpoints/cascade_rcnn_s101_fpn_syncbn-backbone%2Bhead_mstrain-range_1x_coco_20201005_113242-b9459f8f.pth	
 
-#HTC (bis 47 box AP)
-	without semantic r50_fpn_1x_coco
-
-#wget -c http://download.openmmlab.com/mmdetection/v2.0/htc/htc_r50_fpn_20e_coco/htc_r50_fpn_20e_coco_20200319-fe28c577.pth \
-      -O checkpoints/htc_r50_fpn_20e_coco_20200319-fe28c577.pth	
-
-#==============================
-
-GCNet (bis 46.4 box AP)
-	=> mask basiert
-	
----
+==================
 
 #HR Net mit HTC (bis 46.4 box AP mit mask)
 	HRNetV2p-W40 mit Cascade R-CNN box AP = 43.8
 
 wget -c http://download.openmmlab.com/mmdetection/v2.0/hrnet/cascade_rcnn_hrnetv2p_w40_20e_coco/cascade_rcnn_hrnetv2p_w40_20e_coco_20200512_161112-75e47b04.pth \
       -O checkpoints/cascade_rcnn_hrnetv2p_w40_20e_coco_20200512_161112-75e47b04.pth
-            	
-#===============
 
-#InstaBooster (bis 44.7 box AP mit Mask R-CNN) Image Augmentation
-	bis 43.7 box AP mit Cascade R-CNN (R-101-FPN Backbone),  @6GB
 
-------
+--
+
+#Res2Net mit HTC (bis 47.5 box AP)	
+
+===================================
 
 #Centripedal Net (bis 44.8 box AP)
 	HourglassNet-104 als Backbone, 16.7GB
@@ -89,7 +75,33 @@ wget -c http://download.openmmlab.com/mmdetection/v2.0/hrnet/cascade_rcnn_hrnetv
 	X-101-64x4d Backbone (11.3 GB)
 
 #wget -c http://download.openmmlab.com/mmdetection/v2.0/grid_rcnn/grid_rcnn_x101_64x4d_fpn_gn-head_2x_coco/grid_rcnn_x101_64x4d_fpn_gn-head_2x_coco_20200204-ec76a754.pth \
-      -O checkpoints/grid_rcnn_x101_64x4d_fpn_gn-head_2x_coco_20200204-ec76a754.pth
+      -O checkpoints/grid_rcnn_x101_64x4d_fpn_gn-head_2x_coco_20200204-ec76a754.pth	
+	
+-------------------------------------------------------------------		
+	
+#============== HTC ===============	
+
+#HTC (bis 47 box AP)
+	without semantic r50_fpn_1x_coco
+
+#wget -c http://download.openmmlab.com/mmdetection/v2.0/htc/htc_r50_fpn_20e_coco/htc_r50_fpn_20e_coco_20200319-fe28c577.pth \
+      -O checkpoints/htc_r50_fpn_20e_coco_20200319-fe28c577.pth	
+
+#==============================
+
+GCNet (bis 46.4 box AP)
+	=> mask basiert
+	
+---
+
+
+            	
+#===============
+
+#InstaBooster (bis 44.7 box AP mit Mask R-CNN) Image Augmentation
+	bis 43.7 box AP mit Cascade R-CNN (R-101-FPN Backbone),  @6GB
+
+
 
 --------------
 
@@ -105,12 +117,6 @@ wget -c http://download.openmmlab.com/mmdetection/v2.0/hrnet/cascade_rcnn_hrnetv
 
 
 #RetinaNet (bis 41 box AP)
-
-
-
-
-
-
 
 
 
