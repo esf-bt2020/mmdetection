@@ -2,6 +2,12 @@
 _base_ = '../resnest/cascade_rcnn_s101_fpn_syncbn-backbone+head_mstrain-range_1x_coco.py'
 
 model = dict(
+
+	backbone=dict(
+		norm_cfg=dict(type='BN', requires_grad=True),
+	
+	),
+
 	roi_head=dict(
 	
 		bbox_head=[
@@ -10,7 +16,7 @@ model = dict(
                 in_channels=256,
                 conv_out_channels=256,
                 fc_out_channels=1024,
-                norm_cfg=dict(type='SyncBN', requires_grad=True),
+                norm_cfg=dict(type='BN', requires_grad=True),
                 roi_feat_size=7,
                 num_classes=80,
                 bbox_coder=dict(
@@ -29,7 +35,7 @@ model = dict(
                 in_channels=256,
                 conv_out_channels=256,
                 fc_out_channels=1024,
-                norm_cfg=dict(type='SyncBN', requires_grad=True),
+                norm_cfg=dict(type='BN', requires_grad=True),
                 roi_feat_size=7,
                 num_classes=80,
                 bbox_coder=dict(
@@ -48,7 +54,7 @@ model = dict(
                 in_channels=256,
                 conv_out_channels=256,
                 fc_out_channels=1024,
-                norm_cfg=dict(type='SyncBN', requires_grad=True),
+                norm_cfg=dict(type='BN', requires_grad=True),
                 roi_feat_size=7,
                 num_classes=80,
                 bbox_coder=dict(
@@ -69,6 +75,9 @@ model = dict(
 
 )
 
+norm_cfg = dict(type='BN', requires_grad=True)
+
+
 # Modify dataset related settings
 dataset_type = 'COCODataset'
 classes = ('luchs', 'rotfuchs', 'wolf')
@@ -85,6 +94,7 @@ data = dict(
         img_prefix='customData/test/',
         classes=classes,
         ann_file='customData/test/_annotation.coco.json'))
+       
 
 # Pretrained model laden
 
