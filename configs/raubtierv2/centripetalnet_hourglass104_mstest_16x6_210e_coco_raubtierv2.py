@@ -1,7 +1,6 @@
 # Basiskonfigurationsfile
 _base_ = '../centripetalnet/centripetalnet_hourglass104_mstest_16x6_210e_coco.py'
 
-
 model = dict(
     type='CornerNet',
     backbone=dict(
@@ -24,7 +23,8 @@ model = dict(
         loss_guiding_shift=dict(
             type='SmoothL1Loss', beta=1.0, loss_weight=0.05),
         loss_centripetal_shift=dict(
-            type='SmoothL1Loss', beta=1.0, loss_weight=1)))
+            type='SmoothL1Loss', beta=1.0, loss_weight=1))
+            )
 
 
 
@@ -32,6 +32,8 @@ model = dict(
 dataset_type = 'COCODataset'
 classes = ('luchs', 'rotfuchs', 'wolf')
 data = dict(
+	samples_per_gpu=1,
+	workers_per_gpu=1,
     train=dict(
         img_prefix='customData/train/',
         classes=classes,
