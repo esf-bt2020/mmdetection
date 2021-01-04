@@ -79,6 +79,8 @@ data = dict(
         classes=classes,
         ann_file='customData/test/_annotation.coco.json'))
 
+total_epochs = 30
+
 # Pretrained model laden
 
 load_from = 'checkpoints/detectors_cascade_rcnn_r50_1x_coco-32a10ba0.pth'

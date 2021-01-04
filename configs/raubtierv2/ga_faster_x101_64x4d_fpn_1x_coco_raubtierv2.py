@@ -1,6 +1,15 @@
 # Basiskonfigurationsfile
-_base_ = './guided_anchoring/ga_faster_x101_64x4d_fpn_1x_coco.py '
+_base_ = '../guided_anchoring/ga_faster_x101_64x4d_fpn_1x_coco.py'
 
+model = dict(
+	roi_head=dict(
+		bbox_head=dict(
+		num_classes=3
+		)
+
+	)
+
+)
 
 # Modify dataset related settings
 dataset_type = 'COCODataset'
