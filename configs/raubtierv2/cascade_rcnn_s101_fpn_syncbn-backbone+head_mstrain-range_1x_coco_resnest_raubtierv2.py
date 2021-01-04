@@ -93,8 +93,9 @@ data = dict(
     test=dict(
         img_prefix='customData/test/',
         classes=classes,
-        ann_file='customData/test/_annotation.coco.json'))
-       
+        ann_file='customData/test/_annotations.coco.json'))
+    
+total_epochs = 30
 
 # Pretrained model laden
 

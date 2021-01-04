@@ -16,8 +16,9 @@ data = dict(
     test=dict(
         img_prefix='customData/test/',
         classes=classes,
-        ann_file='customData/test/_annotation.coco.json'))
+        ann_file='customData/test/_annotations.coco.json'))
 
+total_epochs = 30
 
 # Use the pre-trained model to obtain higher performance
 load_from = 'checkpoints/cascade_rcnn_r101_fpn_dconv_c3-c5_1x_coco_20200203-3b2f0594.pth'
