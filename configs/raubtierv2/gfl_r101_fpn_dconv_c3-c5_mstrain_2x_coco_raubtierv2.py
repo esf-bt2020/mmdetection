@@ -27,6 +27,7 @@ data = dict(
         classes=classes,
         ann_file='customData/test/_annotations.coco.json'))
 
+total_epochs = 48
 
 # Use the pre-trained model to obtain higher performance
 load_from = 'checkpoints/gfl_r101_fpn_dconv_c3-c5_mstrain_2x_coco_20200630_102002-134b07df.pth'
