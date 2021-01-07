@@ -26,8 +26,9 @@ data = dict(
         classes=classes,
         ann_file='customData/test/_annotations.coco.json'))
 
-# Pretrained model laden
+total_epochs = 40
 
+# Pretrained model laden
 load_from = 'checkpoints/grid_rcnn_x101_64x4d_fpn_gn-head_2x_coco_20200204-ec76a754.pth'
 
 #http://download.openmmlab.com/mmdetection/v2.0/grid_rcnn/grid_rcnn_x101_64x4d_fpn_gn-head_2x_coco/grid_rcnn_x101_64x4d_fpn_gn-head_2x_coco_20200204-ec76a754.pth
