@@ -33,7 +33,7 @@ dataset_type = 'COCODataset'
 classes = ('luchs', 'rotfuchs', 'wolf')
 data = dict(
 	samples_per_gpu=1,
-	workers_per_gpu=1,
+	workers_per_gpu=2,
     train=dict(
         img_prefix='customData/train/',
         classes=classes,
@@ -45,7 +45,7 @@ data = dict(
     test=dict(
         img_prefix='customData/test/',
         classes=classes,
-        ann_file='customData/test/_annotation.coco.json'))
+        ann_file='customData/test/_annotations.coco.json'))
 
 # Pretrained model laden
 
