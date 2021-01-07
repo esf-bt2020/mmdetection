@@ -75,7 +75,7 @@ data = dict(
     test=dict(
         img_prefix='customData/test/',
         classes=classes,
-        ann_file='customData/test/_annotation.coco.json'))
+        ann_file='customData/test/_annotations.coco.json'))
 
 
 # Use the pre-trained model to obtain higher performance
