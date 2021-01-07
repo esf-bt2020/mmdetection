@@ -5,6 +5,8 @@
 #Done
 #Cascade R-CNN (bis 44.7 box AP)
 
+
+
 #========================== DetectoRS ============
 
 #DetectoRS mit HTC + ResNet-50) bis 49.1 box AP) bis 13.6GB
@@ -77,6 +79,8 @@ wget -c http://download.openmmlab.com/mmdetection/v2.0/hrnet/cascade_rcnn_hrnetv
 
 nohup python -u tools/train.py configs/raubtierv2/reppoints_moment_x101_fpn_dconv_c3-c5_gn-neck+head_2x_coco_raubtierv2.py > reppoints_esfDSVM01B_210106_1334.log &
 
+nohup python -u tools/train.py configs/raubtierv2/reppoints_moment_x101_fpn_dconv_c3-c5_gn-neck+head_2x_coco_raubtierv2.py > reppoints_esfDSVM01_210107_2114mez.log &
+
 #==============================
 
 
@@ -85,6 +89,8 @@ nohup python -u tools/train.py configs/raubtierv2/reppoints_moment_x101_fpn_dcon
 
 #wget -c http://download.openmmlab.com/mmdetection/v2.0/grid_rcnn/grid_rcnn_x101_64x4d_fpn_gn-head_2x_coco/grid_rcnn_x101_64x4d_fpn_gn-head_2x_coco_20200204-ec76a754.pth \
       -O checkpoints/grid_rcnn_x101_64x4d_fpn_gn-head_2x_coco_20200204-ec76a754.pth	
+
+nohup python -u tools/train.py configs/raubtierv2/grid_rcnn_x101_64x4d_fpn_gn-head_2x_coco_raubtierv2.py > gridrcnn_esfDSVM01B_210107_2147mez.log &
 
 #=============================
 
