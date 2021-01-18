@@ -119,3 +119,7 @@ work_dirs/
 *.pth
 *.py~
 *.sh~
+
+_MiscCode/DatasetHandler/DatasetHandler/bin/
+
+_MiscCode/DatasetHandler/DatasetHandler/obj/
