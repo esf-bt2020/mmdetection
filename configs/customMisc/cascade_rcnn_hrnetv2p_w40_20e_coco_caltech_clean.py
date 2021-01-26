@@ -82,4 +82,5 @@ data = dict(
         classes=classes,
         ann_file='customDataCaltech/caltech_adv/eccv_val_TEST_adv.json'))
 
+workdir = '/media/SSD2project/WilLiCam/checkpoint_workdir/hrnetcaltechclean'
 
