@@ -100,6 +100,11 @@ nohup python -u tools/train.py configs/raubtierv2/grid_rcnn_x101_64x4d_fpn_gn-he
       -O checkpoints/ga_faster_x101_64x4d_fpn_1x_coco_20200215-0fa7bde7.pth
 
 
+-----------------
+
+#Libra Faster R-CNN
+
+#wget -c http://download.openmmlab.com/mmdetection/v2.0/libra_rcnn/libra_faster_rcnn_x101_64x4d_fpn_1x_coco/libra_faster_rcnn_x101_64x4d_fpn_1x_coco_20200315-3a7d0488.pth -O checkpoints/libra_faster_rcnn_x101_64x4d_fpn_1x_coco_20200315-3a7d0488.pth
 
 	
 -------------------------------------------------------------------		
@@ -118,6 +123,7 @@ GCNet (bis 46.4 box AP)
 	=> mask basiert
 	
 ---
+
 
 
             	
