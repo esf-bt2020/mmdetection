@@ -46,6 +46,10 @@ data = dict(
         classes=classes,
         ann_file='customData/test/_annotations.coco.json'))
 
+
+optimizer = dict(type='SGD', lr=0.01, momentum=0.9, weight_decay=0.0001)
+
+
 # Pretrained model laden
 
 load_from = 'checkpoints/libra_faster_rcnn_x101_64x4d_fpn_1x_coco_20200315-3a7d0488.pth'
