@@ -37,19 +37,25 @@ model = dict(
 data = dict(
     train=dict(
     	type='CaltechDataset',
-        img_prefix='/media/SSD2project/WilLiCam/datasets/caltech/cct_images',
-        classes=classes,
+        #img_prefix='/media/SSD2project/WilLiCam/datasets/caltech/cct_images',
+        img_prefix='/media/Pool/Thesis/Datensets/cct_images',
         ann_file='customDataCaltech/caltech_adv/eccv_train_adv.json'),
     val=dict(
     	type='CaltechDataset',
-        img_prefix='/media/SSD2project/WilLiCam/datasets/caltech/cct_images',
+        #img_prefix='/media/SSD2project/WilLiCam/datasets/caltech/cct_images',
+        img_prefix='/media/Pool/Thesis/Datensets/cct_images',
         classes=classes,
         ann_file='customDataCaltech/caltech_adv/eccv_val_adv.json'),
     test=dict(
     	type='CaltechDataset',
-         img_prefix='/media/SSD2project/WilLiCam/datasets/caltech/cct_images',
+        #img_prefix='/media/SSD2project/WilLiCam/datasets/caltech/cct_images',
+        img_prefix='/media/Pool/Thesis/Datensets/cct_images',
         classes=classes,
         ann_file='customDataCaltech/caltech_adv/eccv_val_TEST_adv.json'))
+        
+optimizer = dict(type='SGD', lr=0.01, momentum=0.5, weight_decay=0.0001)
 
-work_dir = '/media/SSD2project/WilLiCam/checkpoint_workdir/libra_fasterrcnn_caltechclean'
+total_epochs = 24
+
+#work_dir = '/media/SSD2project/WilLiCam/checkpoint_workdir/libra_fasterrcnn_caltechclean'
 
