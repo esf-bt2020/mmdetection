@@ -123,3 +123,9 @@ work_dirs/
 _MiscCode/DatasetHandler/DatasetHandler/bin/
 
 _MiscCode/DatasetHandler/DatasetHandler/obj/
+
+custom_esf/tools/DatasetHandler/obj/
+
+custom_esf/tools/DatasetHandler/bin/
+
+custom_esf/tools/.vs/
