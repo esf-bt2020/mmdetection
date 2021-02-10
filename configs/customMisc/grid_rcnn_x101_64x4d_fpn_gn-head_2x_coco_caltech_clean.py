@@ -16,19 +16,19 @@ model = dict(
 data = dict(
     train=dict(
     	type='CaltechDataset',
-        img_prefix='/media/SSD2project/WilLiCam/datasets/caltech/cct_images',
-        #img_prefix='/media/Pool/Thesis/Datensets/cct_images',
+        #img_prefix='/media/SSD2project/WilLiCam/datasets/caltech/cct_images',
+        img_prefix='/media/Pool/Thesis/Datensets/cct_images',
         ann_file='customDataCaltech/caltech_adv/eccv_train_adv.json'),
     val=dict(
     	type='CaltechDataset',
-        img_prefix='/media/SSD2project/WilLiCam/datasets/caltech/cct_images',
-        #img_prefix='/media/Pool/Thesis/Datensets/cct_images',
+        #img_prefix='/media/SSD2project/WilLiCam/datasets/caltech/cct_images',
+        img_prefix='/media/Pool/Thesis/Datensets/cct_images',
         classes=classes,
         ann_file='customDataCaltech/caltech_adv/eccv_val_adv.json'),
     test=dict(
     	type='CaltechDataset',
-        img_prefix='/media/SSD2project/WilLiCam/datasets/caltech/cct_images',
-        #img_prefix='/media/Pool/Thesis/Datensets/cct_images',
+        #img_prefix='/media/SSD2project/WilLiCam/datasets/caltech/cct_images',
+        img_prefix='/media/Pool/Thesis/Datensets/cct_images',
         classes=classes,
         ann_file='customDataCaltech/caltech_adv/eccv_val_TEST_adv.json'))
 
@@ -39,4 +39,4 @@ total_epochs = 40
 
 #http://download.openmmlab.com/mmdetection/v2.0/grid_rcnn/grid_rcnn_x101_64x4d_fpn_gn-head_2x_coco/grid_rcnn_x101_64x4d_fpn_gn-head_2x_coco_20200204-ec76a754.pth
 
-work_dir = '/media/SSD2project/WilLiCam/checkpoint_workdir/grid_rcnn_caltech_clean'
+#work_dir = '/media/SSD2project/WilLiCam/checkpoint_workdir/grid_rcnn_caltech_clean'
