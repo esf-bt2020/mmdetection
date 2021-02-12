@@ -91,6 +91,8 @@ data = dict(
 #optimizer = dict(type='SGD', lr=0.02, momentum=0.9, weight_decay=0.0001) #orig (8x2=16)
 optimizer = dict(type='SGD', lr=0.005, momentum=0.9, weight_decay=0.0001) #cheetah (2x2=4)
 
+evaluation = dict(classwise=True, interval=1, metric='bbox')
+
 work_dir = '/media/SSD2project/WilLiCam/checkpoint_workdir/detectorsR50_caltech_coco_LR2gpu'
 
 # Pretrained model laden
