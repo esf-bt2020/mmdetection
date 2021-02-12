@@ -16,6 +16,9 @@ dataset_type = 'CaltechDataset'
 classes = ('bobcat', 'opossum', 'empty', 'coyote', 'racoon', 'bird', 'dog', 'cat', 'squirrel', 'rabbit', 'skunk', 'lizard', 'rodent', 'badger', 'deer', 'cow', 'car', 'fox', 'pig','mountain_lion', 'bat', 'insect')
 
 data = dict(
+
+	workers_per_gpu=1, #for cheetah down to 1
+
     train=dict(
     	type='CaltechDataset',
         img_prefix='/media/SSD2project/WilLiCam/datasets/caltech/cct_images',
