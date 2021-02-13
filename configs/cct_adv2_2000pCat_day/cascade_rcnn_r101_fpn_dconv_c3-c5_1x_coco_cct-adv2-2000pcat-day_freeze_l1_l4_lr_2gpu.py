@@ -101,6 +101,7 @@ data = dict(
 optimizer = dict(type='SGD', lr=0.005, momentum=0.9, weight_decay=0.0001) #cheetah (2x2=4)
 
 #total_epochs = 50
+total_epochs = 24 # default 12
 
 evaluation = dict(classwise=True, interval=1, metric='bbox')
 
