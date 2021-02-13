@@ -1,0 +1,29 @@
+1	opossum
+3	racoon
+5	squirrel
+6	bobcat
+8	dog
+9	coyote
+10	rabbit
+11	bird
+16	cat
+33	car
+34	deer
+51	fox
+
+je 500 annotations
+
+            int mod = date.DayOfYear % 10;
+            
+            if ( mod < 7 )
+            {
+                return "train";
+            }
+            else if ( mod < 9 )
+            {
+                return "val";
+            }
+            else if (mod < 10 )
+            {
+                return "test";
+            }
