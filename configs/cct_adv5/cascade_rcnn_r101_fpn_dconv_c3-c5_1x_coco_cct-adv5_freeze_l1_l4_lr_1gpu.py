@@ -1,10 +1,8 @@
 # The new config inherits a base config to highlight the necessary modification
 _base_ = '../dcn/cascade_rcnn_r101_fpn_dconv_c3-c5_1x_coco.py'
 
-# Modify dataset related settings
 dataset_type = 'CocoDataset'
-
-classes = ('racoon', 'squirrel', 'bobcat', 'dog', 'coyote', 'rabbit', 'bird', 'cat', 'deer', 'fox') #10 classes
+classes = ('raccoon', 'squirrel', 'bobcat', 'dog', 'coyote', 'rabbit', 'bird', 'cat', 'deer', 'fox') #10 classes
 
 model = dict(
 
@@ -77,20 +75,20 @@ data = dict(
     train=dict(
     	type='CocoDataset',
         #img_prefix='customDataCaltech/caltech_halfsize_adv',
-        #img_prefix='/media/Pool/Thesis/Datensets/cct_images',
- 	img_prefix='/home/felice/Datasets/cct_images',
+        img_prefix='/media/Pool/Thesis/Datensets/cct_images',
+ 	#img_prefix='/home/felice/Datasets/cct_images',
         classes=classes,
         ann_file='customDataCaltech/adv5/adv5_train.json'),
     val=dict(
     	type='CocoDataset',
-        #img_prefix='/media/Pool/Thesis/Datensets/cct_images',
-	img_prefix='/home/felice/Datasets/cct_images',
+        img_prefix='/media/Pool/Thesis/Datensets/cct_images',
+	#img_prefix='/home/felice/Datasets/cct_images',
         classes=classes,
         ann_file='customDataCaltech/adv5/adv5_known_val.json'),
     test=dict(
     	type='CocoDataset',
-	img_prefix='/home/felice/Datasets/cct_images',
-        #img_prefix='/media/Pool/Thesis/Datensets/cct_images',
+	#img_prefix='/home/felice/Datasets/cct_images',
+        img_prefix='/media/Pool/Thesis/Datensets/cct_images',
         classes=classes,
         ann_file='customDataCaltech/adv5/adv5_known_test.json'))
 

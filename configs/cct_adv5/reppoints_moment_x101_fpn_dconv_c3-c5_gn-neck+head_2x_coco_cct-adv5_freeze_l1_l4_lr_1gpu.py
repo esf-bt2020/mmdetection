@@ -13,7 +13,7 @@ model = dict(
 
 
 dataset_type = 'CocoDataset'
-classes = ('racoon', 'squirrel', 'bobcat', 'dog', 'coyote', 'rabbit', 'bird', 'cat', 'deer', 'fox') #10 classes
+classes = ('raccoon', 'squirrel', 'bobcat', 'dog', 'coyote', 'rabbit', 'bird', 'cat', 'deer', 'fox') #10 classes
 
 data = dict(
     train=dict(
