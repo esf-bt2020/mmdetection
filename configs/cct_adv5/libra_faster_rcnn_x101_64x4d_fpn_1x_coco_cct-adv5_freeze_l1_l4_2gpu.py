@@ -3,7 +3,7 @@ _base_ = '../libra_rcnn/libra_faster_rcnn_x101_64x4d_fpn_1x_coco.py'
 
 
 # Modify dataset related settings
-dataset_type = 'CaltechDataset'
+dataset_type = 'CocoDataset'
 classes = ('racoon', 'squirrel', 'bobcat', 'dog', 'coyote', 'rabbit', 'bird', 'cat', 'deer', 'fox') #10 classes
 
 model = dict(
@@ -43,19 +43,19 @@ data = dict(
     	type='CocoDataset',
         img_prefix='/media/SSD2project/WilLiCam/datasets/caltech/cct_images',
         #img_prefix='/media/Pool/Thesis/Datensets/cct_images',
-        ann_file='customDataCaltech/caltech_adv/eccv_train_adv.json'),
+        ann_file='customDataCaltech/adv5/adv5_train.json'),
     val=dict(
     	type='CocoDataset',
         img_prefix='/media/SSD2project/WilLiCam/datasets/caltech/cct_images',
         #img_prefix='/media/Pool/Thesis/Datensets/cct_images',
         classes=classes,
-        ann_file='customDataCaltech/caltech_adv/eccv_val_adv.json'),
+        ann_file='customDataCaltech/adv5/adv5_known_val.json'),
     test=dict(
     	type='CocoDataset',
         img_prefix='/media/SSD2project/WilLiCam/datasets/caltech/cct_images',
         #img_prefix='/media/Pool/Thesis/Datensets/cct_images',
         classes=classes,
-        ann_file='customDataCaltech/caltech_adv/eccv_val_TEST_adv.json'))
+        ann_file='customDataCaltech/adv5/adv5_known_test.json'))
 
 
 #optimizer = dict(type='SGD', lr=0.02, momentum=0.9, weight_decay=0.0001) original (2x8=16)
