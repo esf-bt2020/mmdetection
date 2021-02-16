@@ -7,6 +7,10 @@ dataset_type = 'CaltechDataset'
 classes = ('racoon', 'squirrel', 'bobcat', 'dog', 'coyote', 'rabbit', 'bird', 'cat', 'deer', 'fox') #10 classes
 
 model = dict(
+
+backbone=dict(
+		frozen_stages=4
+	),
 	
 	roi_head=dict(
 	
@@ -55,8 +59,8 @@ data = dict(
 
 
 #optimizer = dict(type='SGD', lr=0.02, momentum=0.9, weight_decay=0.0001) original (2x8=16)
-#optimizer = dict(type='SGD', lr=0.0025, momentum=0.9, weight_decay=0.0001)
-#optimizer = dict(type='SGD', lr=0.005, momentum=0.9, weight_decay=0.0001) #cheetah (2x2=4)
+#optimizer = dict(type='SGD', lr=0.0025, momentum=0.9, weight_decay=0.0001) #1gpu (1x2=2)
+optimizer = dict(type='SGD', lr=0.005, momentum=0.9, weight_decay=0.0001) #cheetah (2x2=4)
 
 evaluation = dict(classwise=True, interval=1, metric='bbox')
 
