@@ -9,7 +9,7 @@ classes = ('raccoon', 'squirrel', 'bobcat', 'dog', 'coyote', 'rabbit', 'bird', '
 model = dict(
 
 backbone=dict(
-		#frozen_stages=4
+		frozen_stages=4
 	),
 	
 	roi_head=dict(
@@ -43,21 +43,18 @@ data = dict(
     	type='CocoDataset',
         #img_prefix='/media/SSD2project/WilLiCam/datasets/caltech/cct_images',
         img_prefix='/media/Pool/Thesis/Datensets/cct_images',
-	#img_prefix='/home/felice/Datasets/cct_images',
-	classes=classes,
+        classes=classes,
         ann_file='customDataCaltech/adv5/adv5_train.json'),
     val=dict(
     	type='CocoDataset',
         #img_prefix='/media/SSD2project/WilLiCam/datasets/caltech/cct_images',
         img_prefix='/media/Pool/Thesis/Datensets/cct_images',
-	#img_prefix='/home/felice/Datasets/cct_images',
         classes=classes,
         ann_file='customDataCaltech/adv5/adv5_known_val.json'),
     test=dict(
     	type='CocoDataset',
         #img_prefix='/media/SSD2project/WilLiCam/datasets/caltech/cct_images',
         img_prefix='/media/Pool/Thesis/Datensets/cct_images',
-	#img_prefix='/home/felice/Datasets/cct_images',
         classes=classes,
         ann_file='customDataCaltech/adv5/adv5_known_test.json'))
 

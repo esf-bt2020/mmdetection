@@ -5,6 +5,11 @@ dataset_type = 'CocoDataset'
 classes = ('raccoon', 'squirrel', 'bobcat', 'dog', 'coyote', 'rabbit', 'bird', 'cat', 'deer', 'fox') #10 classes
 
 model = dict(
+
+backbone=dict(
+		frozen_stages=4
+		),
+
     roi_head=dict(
         bbox_head=[
             dict(

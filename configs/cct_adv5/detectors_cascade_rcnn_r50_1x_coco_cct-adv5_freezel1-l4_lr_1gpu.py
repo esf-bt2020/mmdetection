@@ -76,20 +76,20 @@ data = dict(
     train=dict(
     	type='CocoDataset',
         #img_prefix='customDataCaltech/caltech_halfsize_adv',
-        #img_prefix='/media/Pool/Thesis/Datensets/cct_images',
- 	img_prefix='/home/felice/Datasets/cct_images',
+        img_prefix='/media/Pool/Thesis/Datensets/cct_images',
+ 	#img_prefix='/home/felice/Datasets/cct_images',
         classes=classes,
         ann_file='customDataCaltech/adv5/adv5_train.json'),
     val=dict(
     	type='CocoDataset',
-        #img_prefix='/media/Pool/Thesis/Datensets/cct_images',
-	img_prefix='/home/felice/Datasets/cct_images',
+        img_prefix='/media/Pool/Thesis/Datensets/cct_images',
+	#img_prefix='/home/felice/Datasets/cct_images',
         classes=classes,
         ann_file='customDataCaltech/adv5/adv5_known_val.json'),
     test=dict(
     	type='CocoDataset',
-	img_prefix='/home/felice/Datasets/cct_images',
-        #img_prefix='/media/Pool/Thesis/Datensets/cct_images',
+	#img_prefix='/home/felice/Datasets/cct_images',
+        img_prefix='/media/Pool/Thesis/Datensets/cct_images',
         classes=classes,
         ann_file='customDataCaltech/adv5/adv5_known_test.json'))
 
@@ -99,6 +99,8 @@ optimizer = dict(type='SGD', lr=0.0025, momentum=0.9, weight_decay=0.0001) #(1x2
 evaluation = dict(classwise=True, interval=1, metric='bbox')
 
 #work_dir = '/media/SSD2project/WilLiCam/checkpoint_workdir/detectorsR50_cct_adv5_coco'
+
+total_epochs = 16 #default=12
 
 # Pretrained model laden
 load_from = 'checkpoints/detectors_cascade_rcnn_r50_1x_coco-32a10ba0.pth'

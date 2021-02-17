@@ -47,5 +47,5 @@ load_from = 'checkpoints/ga_faster_x101_64x4d_fpn_1x_coco_20200215-0fa7bde7.pth'
 
 evaluation = dict(classwise=True, interval=1, metric='bbox')
 
-work_dir = '/media/SSD2project/WilLiCam/checkpoint_workdir/ga_faster_caltech_cocol1'
+#work_dir = '/media/SSD2project/WilLiCam/checkpoint_workdir/ga_faster_caltech_cocol1'
 
