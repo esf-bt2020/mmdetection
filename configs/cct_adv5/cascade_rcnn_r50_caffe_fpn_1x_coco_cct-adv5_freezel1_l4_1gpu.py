@@ -93,6 +93,8 @@ data = dict(
 
 #optimizer = dict(type='SGD', lr=0.02, momentum=0.9, weight_decay=0.0001) #original (8x2=16)
 optimizer = dict(type='SGD', lr=0.0025, momentum=0.9, weight_decay=0.0001) #(1x2=2)
+
+total_epochs = 18 #default 12
         
 evaluation = dict(classwise=True, interval=1, metric='bbox')
 
