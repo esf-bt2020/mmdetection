@@ -4,7 +4,7 @@ _base_ = '../dcn/cascade_rcnn_r101_fpn_dconv_c3-c5_1x_coco.py'
 # Modify dataset related settings
 dataset_type = 'CocoDataset'
 
-classes = ('racoon', 'squirrel', 'bobcat', 'dog', 'coyote', 'rabbit', 'bird', 'cat', 'deer', 'fox') #10 classes
+classes = ('raccoon', 'squirrel', 'bobcat', 'dog', 'coyote', 'rabbit', 'bird', 'cat', 'deer', 'fox') #10 classes
 
 model = dict(
 
@@ -104,7 +104,7 @@ total_epochs = 16 #default=12
 
 evaluation = dict(classwise=True, interval=1, metric='bbox')
 
-work_dir = '/media/SSD2project/WilLiCam/checkpoint_workdir/cascade_rcnn_r101_fpn_dconv_c3-c5_1x_coco_cctadv5_freezel1l3_LR2gpu'
+work_dir = '/media/SSD2project/WilLiCam/checkpoint_workdir/cascade_rcnn_r101_fpn_dconv_c3-c5_1x_coco_cctadv5_freezel1l3_LR2gpu_210217'
 
 # Use the pre-trained model to obtain higher performance
 load_from = 'checkpoints/cascade_rcnn_r101_fpn_dconv_c3-c5_1x_coco_20200203-3b2f0594.pth'

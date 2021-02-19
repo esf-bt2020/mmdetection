@@ -1,16 +1,20 @@
-# Basiskonfigurationsfile
-_base_ = '../reppoints/reppoints_moment_x101_fpn_dconv_c3-c5_gn-neck+head_2x_coco.py'
+_base_ = '../gfl/gfl_r101_fpn_dconv_c3-c5_mstrain_2x_coco.py'
 
 model = dict(
+
 	backbone=dict(
-       
-        	num_stages=4,
         	frozen_stages=4
         ),
-    	bbox_head=dict(
-        	num_classes=10)
-       )
 
+        bbox_head=dict(num_classes=10)
+        
+
+#train_cfg = dict(
+#    assigner=dict(type='ATSSAssigner', topk=2),
+#    allowed_border=-1,
+#    pos_weight=-1,
+#    debug=False)
+    )
 
 dataset_type = 'CocoDataset'
 classes = ('raccoon', 'squirrel', 'bobcat', 'dog', 'coyote', 'rabbit', 'bird', 'cat', 'deer', 'fox') #10 classes
@@ -36,14 +40,16 @@ data = dict(
         classes=classes,
         ann_file='customDataCaltech/adv5/adv5_known_test.json'))
 
+total_epochs = 36 #default 24epochs
+
 #optimizer = dict(type='SGD', lr=0.02, momentum=0.9, weight_decay=0.0001) #original (8x2=16)
 optimizer = dict(type='SGD', lr=0.0025, momentum=0.9, weight_decay=0.0001) #(1x2=2)
 
-total_epochs = 16 #default=12
-
 evaluation = dict(classwise=True, interval=1, metric='bbox')
 
-load_from = 'checkpoints/reppoints_moment_x101_fpn_dconv_c3-c5_gn-neck%2Bhead_2x_coco_20200329-f87da1ea.pth'
+#work_dir = '/media/SSD2project/WilLiCam/checkpoint_workdir/xyz'
 
-#http://download.openmmlab.com/mmdetection/v2.0/reppoints/reppoints_moment_x101_fpn_dconv_c3-c5_gn-neck%2Bhead_2x_coco/reppoints_moment_x101_fpn_dconv_c3-c5_gn-neck%2Bhead_2x_coco_20200329-f87da1ea.pth
+# Use the pre-trained model to obtain higher performance
+load_from = 'checkpoints/gfl_r101_fpn_dconv_c3-c5_mstrain_2x_coco_20200630_102002-134b07df.pth'
 
+#http://download.openmmlab.com/mmdetection/v2.0/gfl/gfl_r101_fpn_dconv_c3-c5_mstrain_2x_coco/gfl_r101_fpn_dconv_c3-c5_mstrain_2x_coco_20200630_102002-134b07df.pth

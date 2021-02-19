@@ -41,30 +41,31 @@ backbone=dict(
 data = dict(
     train=dict(
     	type='CocoDataset',
-        img_prefix='/media/SSD2project/WilLiCam/datasets/caltech/cct_images',
-        #img_prefix='/media/Pool/Thesis/Datensets/cct_images',
+        #img_prefix='/media/SSD2project/WilLiCam/datasets/caltech/cct_images',
+        img_prefix='/media/Pool/Thesis/Datensets/cct_images',
+        classes=classes,
         ann_file='customDataCaltech/adv5/adv5_train.json'),
     val=dict(
     	type='CocoDataset',
-        img_prefix='/media/SSD2project/WilLiCam/datasets/caltech/cct_images',
-        #img_prefix='/media/Pool/Thesis/Datensets/cct_images',
+        #img_prefix='/media/SSD2project/WilLiCam/datasets/caltech/cct_images',
+        img_prefix='/media/Pool/Thesis/Datensets/cct_images',
         classes=classes,
         ann_file='customDataCaltech/adv5/adv5_known_val.json'),
     test=dict(
     	type='CocoDataset',
-        img_prefix='/media/SSD2project/WilLiCam/datasets/caltech/cct_images',
-        #img_prefix='/media/Pool/Thesis/Datensets/cct_images',
+        #img_prefix='/media/SSD2project/WilLiCam/datasets/caltech/cct_images',
+        img_prefix='/media/Pool/Thesis/Datensets/cct_images',
         classes=classes,
         ann_file='customDataCaltech/adv5/adv5_known_test.json'))
 
 
 #optimizer = dict(type='SGD', lr=0.02, momentum=0.9, weight_decay=0.0001) original (2x8=16)
-#optimizer = dict(type='SGD', lr=0.0025, momentum=0.9, weight_decay=0.0001) #1gpu (1x2=2)
-optimizer = dict(type='SGD', lr=0.005, momentum=0.9, weight_decay=0.0001) #cheetah (2x2=4)
+optimizer = dict(type='SGD', lr=0.0025, momentum=0.9, weight_decay=0.0001) #1gpu (1x2=2)
+#optimizer = dict(type='SGD', lr=0.005, momentum=0.9, weight_decay=0.0001) #cheetah (2x2=4)
 
 evaluation = dict(classwise=True, interval=1, metric='bbox')
 
-work_dir = '/media/SSD2project/WilLiCam/checkpoint_workdir/libra_faster_rcnn_x101_64x4d_fpn_1x_coco_cct-adv5_freeze_l1_l4_LR2gpu'
+#work_dir = '/media/SSD2project/WilLiCam/checkpoint_workdir/libra_faster_rcnn_x101_64x4d_fpn_1x_coco_cct-adv5_freeze_l1_l4_LR2gpu'
 
 load_from = 'checkpoints/libra_faster_rcnn_x101_64x4d_fpn_1x_coco_20200315-3a7d0488.pth'
 

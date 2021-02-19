@@ -1,10 +1,8 @@
 # The new config inherits a base config to highlight the necessary modification
 _base_ = '../dcn/cascade_rcnn_r101_fpn_dconv_c3-c5_1x_coco.py'
 
-# Modify dataset related settings
 dataset_type = 'CocoDataset'
-
-classes = ('racoon', 'squirrel', 'bobcat', 'dog', 'coyote', 'rabbit', 'bird', 'cat', 'deer', 'fox') #10 classes
+classes = ('raccoon', 'squirrel', 'bobcat', 'dog', 'coyote', 'rabbit', 'bird', 'cat', 'deer', 'fox') #10 classes
 
 model = dict(
 
