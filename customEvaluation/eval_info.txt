@@ -1,0 +1,71 @@
+EVAL DCN
+
+#== PLOT Loss
+
+python tools/analyze_logs.py plot_curve 11.log.json
+ --keys loss_cls loss_bbox --legend loss_cls loss_bbox
+ 
+python tools/analyze_logs.py plot_curve /media/RED/FFHS_BT/_TrainedModels/03_DCN_CascadeRCNN_R101/cascade_rcnn_r101_fpn_dconv_c3-c5_1x_coco_caltech_freeze_3090_210207/20210207_133358.log.json
+ --keys loss_cls loss_bbox --legend loss_cls loss_bbox
+
+===========================================0
+#== BBOX_mAP
+
+python tools/analyze_logs.py plot_curve 11.log.json --keys bbox_mAP #–-legend bbox_mAP
+
+
+python tools/analyze_logs.py plot_curve /media/RED/FFHS_BT/_TrainedModels/03_DCN_CascadeRCNN_R101/cascade_rcnn_r101_fpn_dconv_c3-c5_1x_clean_caltech_2060_210119_class80/20210119_161924.log.json
+ --keys bbox_mAP #–-legend bbox_mAP
+ 
+python tools/analyze_logs.py plot_curve /media/RED/FFHS_BT/_TrainedModels/03_DCN_CascadeRCNN_R101/cascade_rcnn_r101_fpn_dconv_c3-c5_1x_coco_caltech_3090_210209/20210209_111213_fixed.log.json --keys bbox_mAP #–-legend bbox_mAP
+
+======================================================
+
+#== Compare Runs
+
+python tools/analysis_tools/analyze_logs.py plot_curve log1.json log2.json --keys bbox_mAP --legend run1 run2
+
+
+==== LogFiles
+
+DNC Clean Freeze L1
+/media/RED/FFHS_BT/_TrainedModels/03_DCN_CascadeRCNN_R101/cascade_rcnn_r101_fpn_dconv_c3-c5_1x_clean_caltech_2060_210119_class80/20210119_161924.log.json
+--
+DCN COCO Freeze L1
+/media/RED/FFHS_BT/_TrainedModels/03_DCN_CascadeRCNN_R101/cascade_rcnn_r101_fpn_dconv_c3-c5_1x_coco_caltech_3090_210209/20210209_111213_fixed.log.json
+--
+DCN COCO Freeze L1-L3
+/media/RED/FFHS_BT/_TrainedModels/03_DCN_CascadeRCNN_R101/cascade_rcnn_r101_fpn_dconv_c3-c5_1x_coco_caltech_freeze_l1_l3_2060_210207/20210207_225613.log.json
+--
+DCN COCO Freeze L1-L4
+/media/RED/FFHS_BT/_TrainedModels/03_DCN_CascadeRCNN_R101/cascade_rcnn_r101_fpn_dconv_c3-c5_1x_coco_caltech_freeze_3090_210207/20210207_133358.log.json
+--
+
+============================================================
+
+
+compare 4 Logs
+
+python tools/analyze_logs.py plot_curve /media/RED/FFHS_BT/_TrainedModels/03_DCN_CascadeRCNN_R101/cascade_rcnn_r101_fpn_dconv_c3-c5_1x_clean_caltech_2060_210119_class80/20210119_161924.log.json /media/RED/FFHS_BT/_TrainedModels/03_DCN_CascadeRCNN_R101/cascade_rcnn_r101_fpn_dconv_c3-c5_1x_coco_caltech_3090_210209/20210209_111213_fixed.log.json /media/RED/FFHS_BT/_TrainedModels/03_DCN_CascadeRCNN_R101/cascade_rcnn_r101_fpn_dconv_c3-c5_1x_coco_caltech_freeze_l1_l3_2060_210207/20210207_225613.log.json /media/RED/FFHS_BT/_TrainedModels/03_DCN_CascadeRCNN_R101/cascade_rcnn_r101_fpn_dconv_c3-c5_1x_coco_caltech_freeze_3090_210207/20210207_133358.log.json --keys bbox_mAP --legend Clean_FreezeL1_bbox_mAP COCO_FreezeL1_bbox_mAP COCO_FreezeL1-L3_bbox_mAP COCO_FreezeL1-L4_bbox_mAP --title DCN_R101_FPN
+
+
+---
+
+compare 3 logs
+
+python tools/analyze_logs.py plot_curve /media/RED/FFHS_BT/_TrainedModels/03_DCN_CascadeRCNN_R101/cascade_rcnn_r101_fpn_dconv_c3-c5_1x_clean_caltech_2060_210119_class80/20210119_161924.log.json /media/RED/FFHS_BT/_TrainedModels/03_DCN_CascadeRCNN_R101/cascade_rcnn_r101_fpn_dconv_c3-c5_1x_coco_caltech_freeze_l1_l3_2060_210207/20210207_225613.log.json /media/RED/FFHS_BT/_TrainedModels/03_DCN_CascadeRCNN_R101/cascade_rcnn_r101_fpn_dconv_c3-c5_1x_coco_caltech_freeze_3090_210207/20210207_133358.log.json --keys bbox_mAP --legend Clean_FreezeL1_bbox_mAP COCO_FreezeL1-L3_bbox_mAP COCO_FreezeL1-L4_bbox_mAP --title DCN_R101_FPN
+
+
+-----------
+
+Test on Testset
+
+python tools/test.py /media/RED/FFHS_BT/Evaluation/03_DCN/COCO_Freeze_L1L4/config.py  /media/RED/FFHS_BT/Evaluation/03_DCN/COCO_Freeze_L1L4/best.pth --eval bbox
+
+
+---
+
+Export Bounding Boxes Test
+
+python tools/test.py /media/RED/FFHS_BT/Evaluation/03_DCN/COCO_Freeze_L1L4/config.py  /media/RED/FFHS_BT/Evaluation/03_DCN/COCO_Freeze_L1L4/best.pth --show-dir /media/RED/FFHS_BT/Evaluation/03_DCN/COCO_Freeze_L1L4/output_test
+

@@ -1,30 +1,31 @@
 
-folderModel="/home/felice/Work/Git_Ext/esf-bt2020_mmdetection/work_dirs/gfl_r101_fpn_dconv_c3-c5_mstrain_2x_coco_cct-adv5_1gpu"
+folderModel="/media/RED/FFHS_BT/_TrainedModels/cct_adv5/12_LibraFasterRCNN_X101/libra_faster_rcnn_x101_64x4d_fpn_1x_coco_cct-adv5_freeze_l1_l4_1gpu"
 
-folderImages="/home/felice/Datasets/cct_images"
+#folderImages="/home/felice/Datasets/cct_images"
+folderImages="media/Pool/Thesis/Datensets/cct_images"
 
 fileAnnotationsTransTest='customDataCaltech/adv5/adv5_trans_test.json'
 
-fileToTest=$fileAnnotationsTransVal
-
-bestEpochKnown=27
-bestEpochTrans=26
+bestEpochKnown=12
+bestEpochTrans=12
 
 modelConfig="${folderModel}/train_config.py"
 
 
 
-outputfolderknown = "${folderModel}/test_known"
-mkdir outputfolderknown
+outputfolderknown="${folderModel}/test_known"
+echo Creating Folder: $outputfolderknown
+mkdir $outputfolderknown
 fileEpoch="${folderModel}/epoch_${bestEpochKnown}.pth"
-python tools/test.py $modelConfig $fileEpoch --show-dir outputfolderknown --eval bbox > "${folderModel}/test_known_best_ep${i}.log"
+python tools/test.py $modelConfig $fileEpoch --show-dir $outputfolderknown --eval bbox > "${folderModel}/test_known_best_ep${i}.log"
 
 
 
-outputfoldertrans = "${folderModel}/test_trans"
-mkdir outputfoldertrans
+outputfoldertrans="${folderModel}/test_trans"
+echo Creating Folder: $outputfoldertrans
+mkdir $outputfoldertrans
 fileEpoch="${folderModel}/epoch_${bestEpochTrans}.pth"
-python tools/test.py $modelConfig $fileEpoch --show-dir outputfoldertrans --eval bbox > "${folderModel}/test_trans_best_ep${i}.log"
+python tools/test.py $modelConfig $fileEpoch --show-dir $outputfoldertrans --cfg-options data.test.ann_file=$fileAnnotationsTransTest --eval bbox > "${folderModel}/test_trans_best_ep${i}.log"
 
 
 #Save Test
