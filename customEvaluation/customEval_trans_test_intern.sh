@@ -34,7 +34,7 @@ done
 fileToTest=$fileAnnotationsTransTest
 
 #Test on TransTest
-for i in $(seq 1 $epochEnd)
+for i in $(seq $epochStart $epochEnd)
 do
 	fileEpoch="${folderModel}/epoch_${i}.pth"
 	python tools/test.py $modelConfig $fileEpoch --cfg-options data.test.ann_file=$fileToTest data.test.img_prefix=$folderImages --eval bbox > "${folderModel}/test_transtest_ep${i}.log"
