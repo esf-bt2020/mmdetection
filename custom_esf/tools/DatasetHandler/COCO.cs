@@ -78,6 +78,11 @@ namespace DatasetHandler
         public long width { get; set; }
 
         public string date_captured { get; set; }
+
+        //Added Properties
+        public string location { get; set; } //je nach File  string oder long
+        public long seq_num_frames { get; set; }
+        public long frame_num { get; set; }
     }
 
     public partial class Info

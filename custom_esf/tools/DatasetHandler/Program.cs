@@ -12,25 +12,110 @@ namespace DatasetHandler
 {
     class Program
     {
+
+        static void Main(string[] args)
+        {
+            //CleanAnnotationFile();
+
+            //CreateCCTAdvanced2_Day_Split_files();
+            //CleanAnnotationFile();
+            AnalyzeDataset();
+            //CreateCCTAdvanced2_Day_Split_files();
+        }
+
+        private static void CreateCCTAdvanced2_Day_Split_files()
+        {
+            string fileToSplit = @"C:\Work\Github\esf-bt2020_mmdetection\customDataCaltech\adv5\caltech_bboxes_20200316_cleaned_with_location.json";
+            Adv5_GenerateSplitDay1000.SplitAnnotationFile(fileToSplit);
+        }
+
+        private static void CleanAnnotationFile()
+        {
+            //string originalFile = @"C:\Work\Github\esf-bt2020_mmdetection\customDataCaltech\caltech_bboxes_20200316.json";
+            string originalFile = @"C:\Work\Github\esf-bt2020_mmdetection\customDataCaltech\eccv_18_annotations\train_annotations.json";
+
+            CleanAnnotationFile(originalFile);
+        }
+
+        private static void AnalyzeDataset()
+        {
+            string originalFile = @"C:\Work\Github\esf-bt2020_mmdetection\customDataCaltech\adv5\adv5_known_val.json";
+            DatasetAnalyzer.CreateFullStatistic(originalFile);
+        }
+
+        private static void GetFileStatistics()
+        {
+            //string file = @"C:\Work\Github\esf-bt2020_mmdetection\customDataCaltech\caltech_adv\eccv_val_adv.json";
+
+            //string file = @"C:\Work\Github\esf-bt2020_mmdetection\customDataCaltech\caltech_adv\eccv_val_TEST_adv.json";
+
+            //string file = @"C:\Work\Github\esf-bt2020_mmdetection\customDataCaltech\caltech_bboxes_20200316.json";
+
+            // GetStatisticsOfFile(file);
+        }
+
+
+        /*
         static void Main(string[] args)
         {
             string rootpath = @"C:\Work\Github\esf-bt2020_mmdetection\customDataCaltech";
             //CreateStrictSplittedCameraLocationsOrigClasses(rootpath);
 
 
-            string filename = "caltech_bboxes_20200316.json";
-            var imagelist = GetImageList(rootpath, filename);
+
+            //string filename = "caltech_bboxes_20200316.json";
+            //var imagelist = GetImageList(rootpath, filename);
 
 
-            string sourceFolder = @"Y:\Thesis\Datensets\cct_images";
-            string targetfolder = @"Y:\Thesis\Datensets\cct_images_bbox_all";
-            CopyFilesInListToTargetFolder(sourceFolder, targetfolder, imagelist);
+            //string sourceFolder = @"Y:\Thesis\Datensets\cct_images";
+            //string targetfolder = @"Y:\Thesis\Datensets\cct_images_bbox_all";
+            //CopyFilesInListToTargetFolder(sourceFolder, targetfolder, imagelist);
+
+            //string file = @"C:\Work\Github\esf-bt2020_mmdetection\customDataCaltech\caltech_adv\eccv_train_adv.json";
+
+           // string file = @"C:\Work\Github\esf-bt2020_mmdetection\customDataCaltech\caltech_bboxes_20200316_esf.json";
+
+
+            //string file = @"C:\Work\Github\esf-bt2020_mmdetection\customDataCaltech\caltech_adv\eccv_val_adv.json";
+
+            //string file = @"C:\Work\Github\esf-bt2020_mmdetection\customDataCaltech\caltech_adv\eccv_val_TEST_adv.json";
+
+            //string file = @"C:\Work\Github\esf-bt2020_mmdetection\customDataCaltech\caltech_bboxes_20200316.json";
+
+           // GetStatisticsOfFile(file);
+        }
+        */
+
+
+        private static void GetStatisticsOfFile(string filefullname)
+        {
+
+            FileInfo fileinf = new FileInfo(filefullname);
+            string filename = fileinf.Name;
+
+            var imagesperCategory = AnnotationHelper.GetImagesPerCategory(filefullname);
+
+            var categories = AnnotationHelper.GetCategoryDic(filefullname);
+
+            int total = 0;
+            foreach(var key in imagesperCategory.Keys )
+            {
+                if ( imagesperCategory.TryGetValue(key, out var list) )
+                {
+                    if (categories.TryGetValue(key, out string categoryName))
+                    {
+                        Debug.WriteLine($"{filename};{key};{categoryName};{list.Count}");
+                        total += list.Count;
+                    }
+                }
+            }
+            Debug.WriteLine($"{filename};ALL;TOTAL;{total}");
         }
 
         private static void CopyFilesInListToTargetFolder(string sourceFolder, string targetFolder, List<string> filenames)
         {
             DirectoryInfo dir = new DirectoryInfo(sourceFolder);
-            int copied = 0;
+            int copied = 0;   
             foreach(var file in filenames )
             {
                 string fileFullname = Path.Combine(sourceFolder, file);
@@ -393,7 +478,7 @@ namespace DatasetHandler
 
             var serialized = JsonSerializer.Serialize(deserialized, typeof(Coco));
 
-            string targetfilename = path + "_cleaned";
+            string targetfilename = path + "_cleaned_v2";
             System.IO.File.WriteAllText(targetfilename, serialized);
 
             return targetfilename;
