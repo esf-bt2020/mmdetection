@@ -108,7 +108,7 @@ data = dict(
         classes=classes,
         ann_file='customDataCaltech/adv5/adv5_known_test.json'))
     
-#total_epochs = 30
+total_epochs = 16 #default 12
 
 #optimizer = dict(type='SGD', lr=0.02, momentum=0.9, weight_decay=0.0001) #original (8x2=16)
 #optimizer = dict(type='SGD', lr=0.0025, momentum=0.9, weight_decay=0.0001) #(1x2=2)
