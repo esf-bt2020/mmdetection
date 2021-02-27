@@ -65,7 +65,7 @@ data = dict(
 optimizer = dict(type='SGD', lr=0.0025, momentum=0.9, weight_decay=0.0001) #2 GPUs => 2*3=6 => 6/48= 1/8 cheetah
 #optimizer = dict(type='SGD', lr=0.0025, momentum=0.9, weight_decay=0.0001) #(1x6=6)
 
-evaluation = dict(classwise=True, interval=1, metric='bbox')
+evaluation = dict(classwise=True, interval=4, metric='bbox')
 
 load_from = 'checkpoints/centripetalnet_hourglass104_mstest_16x6_210e_coco_20200915_204804-3ccc61e5.pth'
 
