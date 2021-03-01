@@ -19,8 +19,28 @@ namespace DatasetHandler
 
             //CreateCCTAdvanced2_Day_Split_files();
             //CleanAnnotationFile();
-            AnalyzeDataset();
+            //AnalyzeDataset();
+            // GetEmptyPictures
+            CreateAdv5v3withEmpty();
             //CreateCCTAdvanced2_Day_Split_files();
+        }
+
+        private static void CreateAdv5v3withEmpty()
+        {
+            string fileToSplit = @"C:\Work\Github\esf-bt2020_mmdetection\customDataCaltech\adv5\caltech_bboxes_20200316_cleaned_with_location.json";
+            Adv5v3_withEmpty creator = new Adv5v3_withEmpty(fileToSplit);
+            creator.AddEmptyPictures();
+        }
+
+        private static void GetEmptyPictures()
+        {
+            string fileToSplit = @"C:\Work\Github\esf-bt2020_mmdetection\customDataCaltech\adv5\caltech_bboxes_20200316_cleaned_with_location.json";
+
+            string jsonString = File.ReadAllText(fileToSplit);
+            var deserialized = JsonSerializer.Deserialize<Coco>(jsonString);
+
+            EmptyImageGetter getter = new EmptyImageGetter(deserialized);
+            var emptypictures = getter.GetEmptyImages();
         }
 
         private static void CreateCCTAdvanced2_Day_Split_files()
