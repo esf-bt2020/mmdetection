@@ -1,5 +1,5 @@
 
-folderModel="/media/RED/FFHS_BT/_TrainedModels/cct_adv5/12_LibraFasterRCNN_X101/libra_faster_rcnn_x101_64x4d_fpn_1x_coco_cct-adv5_freeze_l1_l4_1gpu"
+folderModel="/media/RED/FFHS_BT/_TrainedModels/cct_adv5v2/12_LibraFasterRCNN_X101/libra_faster_rcnn_x101_64x4d_fpn_1x_coco_cct-adv5v2_freeze_l1_l4_1gpu"
 
 #folderImages="/home/felice/Datasets/cct_images"
 folderImages="media/Pool/Thesis/Datensets/cct_images"
