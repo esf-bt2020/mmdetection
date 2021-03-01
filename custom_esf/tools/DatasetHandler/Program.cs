@@ -23,12 +23,13 @@ namespace DatasetHandler
             // GetEmptyPictures
             CreateAdv5v3withEmpty();
             //CreateCCTAdvanced2_Day_Split_files();
+            //COCOContext.CreateContextRCNN.Create();
         }
 
         private static void CreateAdv5v3withEmpty()
         {
             string fileToSplit = @"C:\Work\Github\esf-bt2020_mmdetection\customDataCaltech\adv5\caltech_bboxes_20200316_cleaned_with_location.json";
-            Adv5v3_withEmpty creator = new Adv5v3_withEmpty(fileToSplit);
+            Adv5v5_withEmptybbox creator = new Adv5v5_withEmptybbox(fileToSplit);
             creator.AddEmptyPictures();
         }
 

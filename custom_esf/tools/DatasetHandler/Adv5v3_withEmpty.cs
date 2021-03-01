@@ -61,7 +61,7 @@ namespace DatasetHandler
             }
 
             string sourcePath = @"C:\Work\Github\esf-bt2020_mmdetection\customDataCaltech\adv5";
-            string targetPath = @"C:\Work\Github\esf-bt2020_mmdetection\customDataCaltech\adv5";
+            string targetPath = @"C:\Work\Github\esf-bt2020_mmdetection\customDataCaltech\adv5v3";
 
 
 
@@ -82,7 +82,12 @@ namespace DatasetHandler
             var deserialized = JsonSerializer.Deserialize<Coco>(jsonString);
 
             var allimages = deserialized.images.ToList();
+
+
+
             allimages.AddRange(imagesToAdd.ToArray());
+
+
             deserialized.images = allimages.ToArray();
             var serialized = JsonSerializer.Serialize(deserialized, typeof(Coco));
             System.IO.File.WriteAllText(Path.Combine(targetFolder, targetFilename), serialized);
