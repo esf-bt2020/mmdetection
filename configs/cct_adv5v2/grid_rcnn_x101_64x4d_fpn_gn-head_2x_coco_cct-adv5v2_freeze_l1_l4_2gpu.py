@@ -48,7 +48,7 @@ optimizer = dict(type='SGD', lr=0.005, momentum=0.9, weight_decay=0.0001) #cheet
 
 evaluation = dict(classwise=True, interval=1, metric='bbox')
 
-work_dir = '/media/SSD2project/WilLiCam/checkpoint_workdir/grid_rcnn_x101_64x4d_fpn_gn-head_2x_coco_cct-adv5v2_freeze_l1_l4_2gpu.py'
+work_dir = '/media/storage1/projects/WilLiCam/checkpoint_workdir/grid_rcnn_x101_64x4d_fpn_gn-head_2x_coco_cct-adv5v2_freeze_l1_l4_2gpu'
 
 # Pretrained model laden
 load_from = 'checkpoints/grid_rcnn_x101_64x4d_fpn_gn-head_2x_coco_20200204-ec76a754.pth'
