@@ -1,0 +1,24 @@
+python example.py --datasets COCO --img_path 
+
+==> RaubtierV2b
+
+python example.py --datasets COCO --img_path C:\Temp\COCO_CONVERT\raubtierv2_b\test --convert_output_path C:\Temp\COCO_CONVERT\raubtierv2_b\test\out_conv --label "C:\Temp\COCO_CONVERT\raubtierv2_b\test\_annotations.coco.json" --img_type ".jpg" --manifest_path C:\Temp\COCO_CONVERT\raubtierv2_b\test\out_conv --cls_list_file C:\Temp\COCO_CONVERT\raubtierv2_b\test\out_conv\test.names
+
+python example.py --datasets COCO --img_path C:\Temp\COCO_CONVERT\raubtierv2_b\train --convert_output_path C:\Temp\COCO_CONVERT\raubtierv2_b\train\out_conv --label "C:\Temp\COCO_CONVERT\raubtierv2_b\train\_annotations.coco.json" --img_type ".jpg" --manifest_path C:\Temp\COCO_CONVERT\raubtierv2_b\train\out_conv --cls_list_file C:\Temp\COCO_CONVERT\raubtierv2_b\train\out_conv\raubtierv2b.names
+
+python example.py --datasets COCO --img_path C:\Temp\COCO_CONVERT\raubtierv2_b\valid --convert_output_path C:\Temp\COCO_CONVERT\raubtierv2_b\valid\out_conv --label "C:\Temp\COCO_CONVERT\raubtierv2_b\valid\_annotations.coco.json" --img_type ".jpg" --manifest_path C:\Temp\COCO_CONVERT\raubtierv2_b\valid\out_conv --cls_list_file C:\Temp\COCO_CONVERT\raubtierv2_b\valid\out_conv\raubtierv2b.names
+
+----
+
+==> cctadv5v2
+
+python example.py --datasets COCO --img_path Y:\Thesis\Datensets\cct_images_bbox_all --convert_output_path C:\Temp\COCO_CONVERT\cct_adv5v2\yolo_out\train --label "C:\Work\Github\esf-bt2020_mmdetection\customDataCaltech\adv5\adv5_train.json" --img_type ".jpg" --manifest_path C:\Temp\COCO_CONVERT\cct_adv5v2\yolo_out\train --cls_list_file "C:\Temp\COCO_CONVERT\cct_adv5v2\yolo_out\cct_adv5v2.names"
+
+
+python example.py --datasets COCO --img_path Y:\Thesis\Datensets\cct_images_bbox_all --convert_output_path C:\Temp\COCO_CONVERT\cct_adv5v2\yolo_out\known_val --label "C:\Work\Github\esf-bt2020_mmdetection\customDataCaltech\adv5\adv5_known_val.json" --img_type ".jpg" --manifest_path C:\Temp\COCO_CONVERT\cct_adv5v2\yolo_out\known_val --cls_list_file "C:\Temp\COCO_CONVERT\cct_adv5v2\yolo_out\cct_adv5v2.names"
+
+python example.py --datasets COCO --img_path Y:\Thesis\Datensets\cct_images_bbox_all --convert_output_path C:\Temp\COCO_CONVERT\cct_adv5v2\yolo_out\known_test --label "C:\Work\Github\esf-bt2020_mmdetection\customDataCaltech\adv5\adv5_known_test.json" --img_type ".jpg" --manifest_path C:\Temp\COCO_CONVERT\cct_adv5v2\yolo_out\known_test --cls_list_file "C:\Temp\COCO_CONVERT\cct_adv5v2\yolo_out\cct_adv5v2.names"
+
+python example.py --datasets COCO --img_path Y:\Thesis\Datensets\cct_images_bbox_all --convert_output_path C:\Temp\COCO_CONVERT\cct_adv5v2\yolo_out\trans_val --label "C:\Work\Github\esf-bt2020_mmdetection\customDataCaltech\adv5\adv5_trans_val.json" --img_type ".jpg" --manifest_path C:\Temp\COCO_CONVERT\cct_adv5v2\yolo_out\trans_val --cls_list_file "C:\Temp\COCO_CONVERT\cct_adv5v2\yolo_out\cct_adv5v2.names"
+
+python example.py --datasets COCO --img_path Y:\Thesis\Datensets\cct_images_bbox_all --convert_output_path C:\Temp\COCO_CONVERT\cct_adv5v2\yolo_out\trans_test --label "C:\Work\Github\esf-bt2020_mmdetection\customDataCaltech\adv5\adv5_trans_test.json" --img_type ".jpg" --manifest_path C:\Temp\COCO_CONVERT\cct_adv5v2\yolo_out\trans_test --cls_list_file "C:\Temp\COCO_CONVERT\cct_adv5v2\yolo_out\cct_adv5v2.names"
