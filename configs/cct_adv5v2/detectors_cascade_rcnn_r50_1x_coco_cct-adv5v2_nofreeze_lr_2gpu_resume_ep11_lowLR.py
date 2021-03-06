@@ -100,7 +100,7 @@ data = dict(
         ann_file='customDataCaltech/adv5/adv5_known_test.json'))
 
 
-#optimizer = dict(type='SGD', lr=0.005, momentum=0.9, weight_decay=0.0001) #cheetah (2x2=4) - used for training
+#optimizer = dict(type='SGD', lr=0.005, momentum=0.9, weight_decay=0.0001) #cheetah (2x2=4) standard für 2 GPU
 optimizer = dict(type='SGD', lr=0.0005 momentum=0.9, weight_decay=0.0001) #finetuning with 2 GPUs, 1/10 von 0.005
 
 
