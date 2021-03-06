@@ -109,7 +109,7 @@ evaluation = dict(classwise=True, interval=1, metric='bbox')
 #work_dir = '/media/SSD2project/WilLiCam/checkpoint_workdir/detectorsR50_cct_adv5_coco'
 work_dir = '/media/storage1/projects/WilLiCam/checkpoint_workdir/detectors_cascade_rcnn_r50_1x_coco_cct-adv5v2_nofreeze_lr_2gpu_resume_ep11_low10LR'
 
-total_epochs = 10 #ep11 plus 10 mit lowLR
+total_epochs = 16 #ep11 plus 5ep mit lowLR
 
 # Pretrained model laden
 #load_from = 'checkpoints/detectors_cascade_rcnn_r50_1x_coco-32a10ba0.pth'
