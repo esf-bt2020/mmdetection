@@ -20,10 +20,22 @@ namespace DatasetHandler
             //CreateCCTAdvanced2_Day_Split_files();
             //CleanAnnotationFile();
             //AnalyzeDataset();
+            //GetStatisticsOfFolder();
             // GetEmptyPictures
-            CreateAdv5v3withEmpty();
+            //CreateAdv5v3withEmpty();
             //CreateCCTAdvanced2_Day_Split_files();
             //COCOContext.CreateContextRCNN.Create();
+
+            //AnalyzeCCTFull();
+            YoloImageSeperator.SeperateImagesCCTAdv5v2();
+        }
+
+        private static void AnalyzeCCTFull()
+        {
+            string file = @"C:\Data\FFHS\BT\cct_parsing\CaltechCameraTrapsECCV18.json";
+            CCTAnalyzerSpecialPicturesWithoutbbox cCTAnalyzerSpecialPicturesWithoutbbox = new CCTAnalyzerSpecialPicturesWithoutbbox(file);
+            cCTAnalyzerSpecialPicturesWithoutbbox.CopyImagesOfCategoryToAnotherFolder(@"Y:\Thesis\Datensets\cct_images", @"C:\Data\FFHS\BT\Dataset\RaubtierEmptyDataset\empty_cct", 30);
+
         }
 
         private static void CreateAdv5v3withEmpty()
@@ -72,7 +84,22 @@ namespace DatasetHandler
 
             //string file = @"C:\Work\Github\esf-bt2020_mmdetection\customDataCaltech\caltech_bboxes_20200316.json";
 
-            // GetStatisticsOfFile(file);
+            string file = @"C:\Work\Github\esf-bt2020_mmdetection\customDataCaltech\adv5\adv5_known_test.json";
+
+            GetStatisticsOfFile(file);
+        }
+
+        private static void GetStatisticsOfFolder()
+        {
+            string folder = @"C:\Work\Github\esf-bt2020_mmdetection\customDataCaltech\adv5\";
+            DirectoryInfo folderinf = new DirectoryInfo(folder);
+            var files = folderinf.GetFiles();
+            foreach(var file in files )
+            {
+                GetStatisticsOfFile(file.FullName);
+                string jsonString = File.ReadAllText(file.FullName);
+                var deserialized = JsonSerializer.Deserialize<Coco>(jsonString);
+            }
         }
 
 

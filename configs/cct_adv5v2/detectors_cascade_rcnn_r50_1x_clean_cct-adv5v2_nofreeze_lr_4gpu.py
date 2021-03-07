@@ -99,22 +99,19 @@ data = dict(
         classes=classes,
         ann_file='customDataCaltech/adv5/adv5_known_test.json'))
 
-
-#optimizer = dict(type='SGD', lr=0.005, momentum=0.9, weight_decay=0.0001) #cheetah (2x2=4) standard für 2 GPU
-optimizer = dict(type='SGD', lr=0.0005, momentum=0.9, weight_decay=0.0001) #finetuning with 2 GPUs, 1/10 von 0.005
-
+#optimizer = dict(type='SGD', lr=0.02, momentum=0.9, weight_decay=0.0001) #original (8x2=16)
+optimizer = dict(type='SGD', lr=0.01, momentum=0.9, weight_decay=0.0001) #(4GPU => (4x2=8)
+#optimizer = dict(type='SGD', lr=0.0025, momentum=0.9, weight_decay=0.0001) #(1x2=2)
+#optimizer = dict(type='SGD', lr=0.005, momentum=0.9, weight_decay=0.0001) #cheetah (2x2=4)
 
 evaluation = dict(classwise=True, interval=1, metric='bbox')
 
-#work_dir = '/media/SSD2project/WilLiCam/checkpoint_workdir/detectorsR50_cct_adv5_coco'
-work_dir = '/media/storage1/projects/WilLiCam/checkpoint_workdir/detectors_cascade_rcnn_r50_1x_coco_cct-adv5v2_nofreeze_lr_2gpu_resume_ep11_low10LR'
+work_dir = '/media/storage1/projects/WilLiCam/checkpoint_workdir/detectors_cascade_rcnn_r50_1x_clean_cct-adv5v2_nofreeze_lr_4gpu'
 
-total_epochs = 16 #ep11 plus 5ep mit lowLR
+total_epochs = 14 #default=12
 
 # Pretrained model laden
 #load_from = 'checkpoints/detectors_cascade_rcnn_r50_1x_coco-32a10ba0.pth'
-
-resume_from = 'checkpoints/detectoRS_nofreeze_cct-adv5v2_ep11.pth'
 
 #http://download.openmmlab.com/mmdetection/v2.0/detectors/detectors_cascade_rcnn_r50_1x_coco/detectors_cascade_rcnn_r50_1x_coco-32a10ba0.pth
 
