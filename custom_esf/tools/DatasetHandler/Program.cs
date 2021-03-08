@@ -27,7 +27,10 @@ namespace DatasetHandler
             //COCOContext.CreateContextRCNN.Create();
 
             //AnalyzeCCTFull();
-            YoloImageSeperator.SeperateImagesCCTAdv5v2();
+            //YoloImageSeperator.SeperateImagesCCTAdv5v2();
+
+            CreateCCTAdvanced2v5v7_Day_Split_files();
+            //AnalyzeRaubtierv2Dataset();
         }
 
         private static void AnalyzeCCTFull()
@@ -36,6 +39,11 @@ namespace DatasetHandler
             CCTAnalyzerSpecialPicturesWithoutbbox cCTAnalyzerSpecialPicturesWithoutbbox = new CCTAnalyzerSpecialPicturesWithoutbbox(file);
             cCTAnalyzerSpecialPicturesWithoutbbox.CopyImagesOfCategoryToAnotherFolder(@"Y:\Thesis\Datensets\cct_images", @"C:\Data\FFHS\BT\Dataset\RaubtierEmptyDataset\empty_cct", 30);
 
+        }
+
+        private static void AnalyzeRaubtierv2Dataset()
+        {
+            AnalyzeCOCORaubtier.AnalyzeDataset();
         }
 
         private static void CreateAdv5v3withEmpty()
@@ -58,8 +66,16 @@ namespace DatasetHandler
 
         private static void CreateCCTAdvanced2_Day_Split_files()
         {
+            //für cct_adv5
             string fileToSplit = @"C:\Work\Github\esf-bt2020_mmdetection\customDataCaltech\adv5\caltech_bboxes_20200316_cleaned_with_location.json";
             Adv5_GenerateSplitDay1000.SplitAnnotationFile(fileToSplit);
+        }
+
+        private static void CreateCCTAdvanced2v5v7_Day_Split_files()
+        {
+            //für cct_adv5v7
+            string fileToSplit = @"C:\Work\Github\esf-bt2020_mmdetection\customDataCaltech\adv5v7\caltech_bboxes_20200316_cleaned_with_location.json";
+            Adv5v7_noLimit.SplitAnnotationFile(fileToSplit);
         }
 
         private static void CleanAnnotationFile()

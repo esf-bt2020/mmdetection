@@ -14,7 +14,7 @@ namespace DatasetHandler
          * Bounding boxen aufteilen in: tag of jahr modulo 10, 0-6 = train, 7-8 = val, 9=test
          */
 
-
+        //used in thesis:             string fileToSplit = @"C:\Work\Github\esf-bt2020_mmdetection\customDataCaltech\adv5\caltech_bboxes_20200316_cleaned_with_location.json";
 
         public static void SplitAnnotationFile(string path)
         {
