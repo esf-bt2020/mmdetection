@@ -41,20 +41,20 @@ backbone=dict(
 data = dict(
     train=dict(
     	type='CocoDataset',
-        #img_prefix='/media/SSD2project/WilLiCam/datasets/caltech/cct_images',
-        img_prefix='/media/Pool/Thesis/Datensets/cct_images',
+        img_prefix='/media/SSD2project/WilLiCam/datasets/caltech/cct_images',
+        #img_prefix='/media/Pool/Thesis/Datensets/cct_images',
         classes=classes,
         ann_file='customDataCaltech/adv5/adv5_train.json'),
     val=dict(
     	type='CocoDataset',
-        #img_prefix='/media/SSD2project/WilLiCam/datasets/caltech/cct_images',
-        img_prefix='/media/Pool/Thesis/Datensets/cct_images',
+        img_prefix='/media/SSD2project/WilLiCam/datasets/caltech/cct_images',
+        #img_prefix='/media/Pool/Thesis/Datensets/cct_images',
         classes=classes,
         ann_file='customDataCaltech/adv5/adv5_known_val.json'),
     test=dict(
     	type='CocoDataset',
-        #img_prefix='/media/SSD2project/WilLiCam/datasets/caltech/cct_images',
-        img_prefix='/media/Pool/Thesis/Datensets/cct_images',
+        img_prefix='/media/SSD2project/WilLiCam/datasets/caltech/cct_images',
+        #img_prefix='/media/Pool/Thesis/Datensets/cct_images',
         classes=classes,
         ann_file='customDataCaltech/adv5/adv5_known_test.json'))
 
@@ -67,7 +67,7 @@ total_epochs=16 #default 12
 
 evaluation = dict(classwise=True, interval=1, metric='bbox')
 
-#work_dir = '/media/SSD2project/WilLiCam/checkpoint_workdir/libra_faster_rcnn_x101_64x4d_fpn_1x_coco_cct-adv5_freeze_l1_l4_LR2gpu'
+work_dir = '/media/SSD2project/WilLiCam/checkpoint_workdir/libra_faster_rcnn_x101_64x4d_fpn_1x_coco_cct-adv5v2_nofreeze_1gpu'
 
 load_from = 'checkpoints/libra_faster_rcnn_x101_64x4d_fpn_1x_coco_20200315-3a7d0488.pth'
 
