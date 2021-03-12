@@ -88,7 +88,7 @@ data = dict(
 optimizer = dict(type='SGD', lr=0.01, momentum=0.9, weight_decay=0.0001) #(4x2=8) 4 GPUs
 #optimizer = dict(type='SGD', lr=0.0025, momentum=0.9, weight_decay=0.0001) #(1x2=2)
 
-total_epochs = 18 #default 12
+total_epochs = 60 #default 12
         
 evaluation = dict(classwise=True, interval=1, metric='bbox')
 
