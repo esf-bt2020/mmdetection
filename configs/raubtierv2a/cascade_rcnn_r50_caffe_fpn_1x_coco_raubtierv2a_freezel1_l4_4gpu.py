@@ -92,6 +92,6 @@ total_epochs = 60 #default 12
         
 evaluation = dict(classwise=True, interval=1, metric='bbox')
 
-work_dir = '/media/storage1/projects/WilLiCam/checkpoint_workdir/cascade_rcnn_r50_caffe_fpn_1x_coco_raubtierv2a_freezel1_l4_4gpu'
+work_dir = '/media/storage1/projects/WilLiCam/checkpoint_workdir/raubtierv2a/cascade_rcnn_r50_caffe_fpn_1x_coco_raubtierv2a_freezel1_l4_4gpu'
 
 load_from = 'checkpoints/cascade_rcnn_r50_caffe_fpn_1x_coco_bbox_mAP-0.404_20200504_174853-b857be87.pth'
