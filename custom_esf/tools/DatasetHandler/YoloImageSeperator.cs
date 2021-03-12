@@ -30,6 +30,17 @@ namespace DatasetHandler
             SeperateImages(transval, Path.Combine(targetfolder, "transval"));
         }
 
+        public static void SeperateImagesCCTAdv5v7()
+        {
+
+            string targetfolder = @"E:\FFHS_BT\Datasets\cct_adv5v7_yolo_images";
+
+
+            string train = @"C:\Temp\COCO_CONVERT\cct_adv5v7\yolo_out\manifest.txt";
+            SeperateImages(train, Path.Combine(targetfolder, "train"));
+
+        }
+
 
         public static void SeperateImages(string manifest, string targetFolder)
         {

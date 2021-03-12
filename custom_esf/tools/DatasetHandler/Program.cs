@@ -29,7 +29,9 @@ namespace DatasetHandler
             //AnalyzeCCTFull();
             //YoloImageSeperator.SeperateImagesCCTAdv5v2();
 
-            CreateCCTAdvanced2v5v7_Day_Split_files();
+            YoloImageSeperator.SeperateImagesCCTAdv5v7();
+
+           // CreateCCTAdvanced2v5v7_Day_Split_files();
             //AnalyzeRaubtierv2Dataset();
         }
 
