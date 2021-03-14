@@ -95,6 +95,7 @@ total_epochs = 24 #default=12
 evaluation = dict(classwise=True, interval=1, metric='bbox')
 
 #work_dir = '/media/SSD2project/WilLiCam/checkpoint_workdir/cascade_rcnn_hrnetv2p_w40_20e_coco_raubtierv2b_freeze_l1_l4_4gpu.py'
+work_dir = '/media/storage1/projects/WilLiCam/checkpoint_workdir/raubtierv2a/cascade_rcnn_hrnetv2p_w40_20e_coco_raubtierv2a_nofreeze_4gpu'
 
 # Pretrained model laden
 
